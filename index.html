@@ -1,0 +1,1559 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>UET Mardan Student Activities Portal</title>
+
+    <!-- Bootstrap CSS -->
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+
+          rel="stylesheet">
+
+    <style>
+
+        body {
+
+            font-family: Arial, sans-serif;
+
+            background-color: #9a96a0;
+
+        }
+
+        .navbar {
+
+            background-color: #220fab;
+
+        }
+
+        .navbar-brand,
+
+        .nav-link {
+
+            color: rgb(209, 210, 193) !important;
+
+        }
+
+        .nav-link:hover {
+
+            color: #d87614 !important;
+
+        }
+
+        .hero {
+
+            background: linear-gradient(135deg, #073b4c, #118ab2);
+
+            color: rgb(16, 13, 13);
+
+            padding: 100px 20px;
+
+        }
+
+        .hero img {
+
+            width: 100%;
+
+            max-height: 350px;
+
+            object-fit: cover;
+
+            border-radius: 15px;
+            transform: translateY(-5px);
+
+        }
+
+        .section-title {
+
+            color: #0c0d0d;
+
+            font-weight: bold;
+
+            margin-bottom: 30px;
+
+        }
+
+        .event-card {
+
+            border: none;
+
+            border-radius: 15px;
+
+            overflow: hidden;
+
+            box-shadow: 0 4px 12px rgba(16, 14, 14, 0.1);
+
+            transition: 0.3s;
+
+            height: 100%;
+
+        }
+
+        .event-card:hover {
+
+            transform: translateY(-5px);
+
+        }
+
+        .event-card img {
+
+            height: 200px;
+
+            object-fit: cover;
+
+        }
+
+        .schedule-section {
+
+            background-color: rgb(202, 197, 197);
+
+        }
+
+        .registration {
+
+            background-color: #eaf4f4;
+
+        }
+
+        .form-box {
+
+            background-color: white;
+
+            padding: 30px;
+
+            border-radius: 15px;
+
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+
+        }
+
+        .btn-custom {
+
+            background-color: #073b4c;
+
+            color: white;
+
+        }
+
+        .btn-custom:hover {
+
+            background-color: #118ab2;
+
+            color: white;
+
+        }
+
+        footer {
+
+            background-color: #073b4c;
+
+            color: white;
+
+            padding: 30px 0;
+
+        }
+
+        .code-section {
+
+            background-color: #111827;
+
+            color: #d1d5db;
+
+            padding: 40px 20px;
+
+        }
+
+        pre {
+
+            background-color: #020617;
+
+            color: #d1d5db;
+
+            padding: 20px;
+
+            border-radius: 10px;
+
+            overflow-x: auto;
+
+            white-space: pre-wrap;
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<nav class="navbar navbar-expand-lg sticky-top">
+
+    <div class="container">
+
+        <a class="navbar-brand fw-bold" href="#">
+
+            UET Mardan Portal
+
+        </a>
+
+        <button class="navbar-toggler bg-light"
+
+                type="button"
+
+                data-bs-toggle="collapse"
+
+                data-bs-target="#navbarMenu">
+
+            <span class="navbar-toggler-icon"></span>
+
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarMenu">
+
+            <ul class="navbar-nav ms-auto">
+
+                <li class="nav-item">
+
+                    <a class="nav-link" href="#home">Home</a>
+
+                </li>
+
+                <li class="nav-item">
+
+                    <a class="nav-link" href="#about">About</a>
+
+                </li>
+
+                <li class="nav-item">
+
+                    <a class="nav-link" href="#events">Events</a>
+
+                </li>
+
+                <li class="nav-item">
+
+                    <a class="nav-link" href="#schedule">Schedule</a>
+
+                </li>
+
+                <li class="nav-item">
+
+                    <a class="nav-link" href="#registration">
+
+                        Registration
+
+                    </a>
+
+                </li>
+
+                <li class="nav-item">
+
+                    <a class="nav-link" href="#contact">Contact</a>
+
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</nav>
+
+<!-- ================= HERO SECTION ================= -->
+
+<section id="home" class="hero">
+
+    <div class="container">
+
+        <div class="row align-items-center">
+
+            <div class="col-lg-6 mb-4">
+
+                <h1 class="display-4 fw-bold">
+
+                    UET Mardan Student Activities Portal
+
+                </h1>
+
+                <p class="lead mt-3">
+
+                    Discover university events, activities, competitions,
+
+                    seminars and student programs at UET Mardan.
+
+                </p>
+
+                <a href="#events" class="btn btn-warning btn-lg mt-3">
+
+                    Explore Events
+
+                </a>
+
+            </div>
+
+            <div class="col-lg-6">
+
+                <img src="data:image/jpeg;base64,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"
+
+                     alt="University Campus">
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= ABOUT SECTION ================= -->
+
+<section id="about" class="py-5">
+
+    <div class="container">
+
+        <h2 class="text-center section-title">
+
+            About Student Activities
+
+        </h2>
+
+        <div class="row justify-content-center">
+
+            <div class="col-lg-9 text-center">
+
+                <p>
+
+                    The UET Mardan Student Activities Portal is designed
+
+                    to provide students with information about upcoming
+
+                    university events and activities.
+
+                </p>
+
+                <p>
+
+                    Students can explore different events, check the
+
+                    event schedule and register online using the
+
+                    registration form.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= EVENTS SECTION ================= -->
+
+<section id="events" class="py-5 bg-light">
+
+    <div class="container">
+
+        <h2 class="text-center section-title">
+
+            Upcoming Events
+
+        </h2>
+
+        <div class="row g-4">
+
+            <!-- Event 1 -->
+
+            <div class="col-md-6 col-lg-3">
+
+                <div class="card event-card">
+
+                    <img src="data:image/jpeg;base64,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"
+                         class="card-img-top"
+
+                         alt="sports">
+
+                    <div class="card-body">
+
+                        <h5 class="card-title">
+
+                            sports
+
+                        </h5>
+
+                        <p class="card-text">
+
+                           Sports are physical activities that improve fitness, teamwork, and discipline. They keep us healthy, active, and energetic while teaching us the importance of hard work and sportsmanship..
+
+                        </p>
+
+                        <a href="#registration"
+
+                           class="btn btn-custom">
+
+                            Register
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Event 2 -->
+
+            <div class="col-md-6 col-lg-3">
+
+                <div class="card event-card">
+
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTE6V8kwGbEs0ReRCld413lERbT41Hfh6fhJHsJTEXl_w&s=10"
+
+                         class="card-img-top"
+
+                         alt="Student Workshop">
+
+                    <div class="card-body">
+
+                        <h5 class="card-title">
+
+                            Student Workshop
+
+                        </h5>
+
+                        <p class="card-text">
+
+                            Improve your communication,
+
+                            teamwork and professional skills.
+
+                        </p>
+
+                        <a href="#registration"
+
+                           class="btn btn-custom">
+
+                            Register
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Event 3 -->
+
+            <div class="col-md-6 col-lg-3">
+
+                <div class="card event-card">
+
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTP8H9GPKQT2YPQjkUe9mWXdX9G_8V_NvZMcJHlyM9O4Q&s"
+
+                         class="card-img-top"
+
+                         alt="Programming Competition">
+
+                    <div class="card-body">
+
+                        <h5 class="card-title">
+
+                            Programming Competition
+
+                        </h5>
+
+                        <p class="card-text">
+
+                            Test your programming and problem-solving
+
+                            skills in an exciting competition.
+
+                        </p>
+
+                        <a href="#registration"
+
+                           class="btn btn-custom">
+
+                            Register
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Event 4 -->
+
+            <div class="col-md-6 col-lg-3">
+
+                <div class="card event-card">
+
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDqGf5g9hvcI8Z9zY2fu4S96iSiOR7u2Nes97tw3qaDw&s=10"
+
+                         class="card-img-top"
+
+                         alt="competition naat">
+
+                    <div class="card-body">
+
+                        <h5 class="card-title">
+
+                            competition naat
+
+                        </h5>
+
+                        <p class="card-text">
+
+                            Enjoy cultural performances, student
+
+                            activities and entertainment.
+
+                        </p>
+
+                        <a href="#registration"
+
+                           class="btn btn-custom">
+
+                            Register
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= SCHEDULE SECTION ================= -->
+
+<section id="schedule" class="schedule-section py-5">
+
+    <div class="container">
+
+        <h2 class="text-center section-title">
+
+            Event Schedule
+
+        </h2>
+
+        <div class="table-responsive">
+
+            <table class="table table-bordered table-striped
+
+                          table-hover text-center">
+
+                <thead class="table-dark">
+
+                    <tr>
+
+                        <th>Event Name</th>
+
+                        <th>Date</th>
+
+                        <th>Time</th>
+
+                        <th>Venue</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    <tr>
+
+                        <td>Technology Seminar</td>
+
+                        <td>15 October 2026</td>
+
+                        <td>10:00 AM</td>
+
+                        <td>Seminar Hall</td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>Student Workshop</td>
+
+                        <td>18 October 2026</td>
+
+                        <td>11:00 AM</td>
+
+                        <td>Computer Lab</td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>Programming Competition</td>
+
+                        <td>22 October 2026</td>
+
+                        <td>09:00 AM</td>
+
+                        <td>CS Lab</td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>Cultural Festival</td>
+
+                        <td>25 October 2026</td>
+
+                        <td>02:00 PM</td>
+
+                        <td>Main Ground</td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= REGISTRATION FORM ================= -->
+
+<section id="registration" class="registration py-5">
+
+    <div class="container">
+
+        <h2 class="text-center section-title">
+
+            Student Event Registration
+
+        </h2>
+
+        <div class="row justify-content-center">
+
+            <div class="col-lg-8">
+
+                <div class="form-box">
+
+                    <form>
+
+                        <!-- Full Name -->
+
+                        <div class="mb-3">
+
+                            <label class="form-label">
+
+                                Full Name
+
+                            </label>
+
+                            <input type="text"
+
+                                   class="form-control"
+
+                                   placeholder="Enter your full name"
+
+                                   required>
+
+                        </div>
+
+                        <!-- Email -->
+
+                        <div class="mb-3">
+
+                            <label class="form-label">
+
+                                Email Address
+
+                            </label>
+
+                            <input type="email"
+
+                                   class="form-control"
+
+                                   placeholder="example@email.com"
+
+                                   required>
+
+                        </div>
+
+                        <!-- Department -->
+
+                        <div class="mb-3">
+
+                            <label class="form-label">
+
+                                Department
+
+                            </label>
+
+                            <select class="form-select" required>
+
+                                <option selected disabled>
+
+                                    Select Department
+
+                                </option>
+
+                                <option>
+
+                                    Computer Science
+
+                                </option>
+
+                                <option>
+
+                                    Electrical Engineering
+
+                                </option>
+
+                                <option>
+
+                                    Civil Engineering
+
+                                </option>
+
+                                <option>
+
+                                    Mechanical Engineering
+
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                        <!-- Select Event -->
+
+                        <div class="mb-3">
+
+                            <label class="form-label">
+
+                                Select Event
+
+                            </label>
+
+                            <select class="form-select" required>
+
+                                <option selected disabled>
+
+                                    Select Event
+
+                                </option>
+
+                                <option>
+
+                                    Technology Seminar
+
+                                </option>
+
+                                <option>
+
+                                    Student Workshop
+
+                                </option>
+
+                                <option>
+
+                                    Programming Competition
+
+                                </option>
+
+                                <option>
+
+                                    Cultural Festival
+
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                        <!-- Gender -->
+
+                        <div class="mb-3">
+
+                            <label class="form-label d-block">
+
+                                Gender
+
+                            </label>
+
+                            <div class="form-check form-check-inline">
+
+                                <input class="form-check-input"
+
+                                       type="radio"
+
+                                       name="gender"
+
+                                       id="male">
+
+                                <label class="form-check-label"
+
+                                       for="male">
+
+                                    Male
+
+                                </label>
+
+                            </div>
+
+                            <div class="form-check form-check-inline">
+
+                                <input class="form-check-input"
+
+                                       type="radio"
+
+                                       name="gender"
+
+                                       id="female">
+
+                                <label class="form-check-label"
+
+                                       for="female">
+
+                                    Female
+
+                                </label>
+
+                            </div>
+
+                        </div>
+
+                        <!-- Message -->
+
+                        <div class="mb-3">
+
+                            <label class="form-label">
+
+                                Message
+
+                            </label>
+
+                            <textarea class="form-control"
+
+                                      rows="4"
+
+                                      placeholder="Write your message here..."></textarea>
+
+                        </div>
+
+                        <!-- Submit -->
+
+                        <button type="submit"
+
+                                class="btn btn-custom w-100">
+
+                            Submit Registration
+
+                        </button>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= CONTACT SECTION ================= -->
+
+<section id="contact" class="py-5">
+
+    <div class="container text-center">
+
+        <h2 class="section-title">
+
+            Contact Us
+
+        </h2>
+
+        <p>
+
+            UET Mardan Student Activities Portal
+
+        </p>
+
+        <p>
+
+            Email: studentactivities@uetmardan.edu.pk
+
+        </p>
+
+        <p>
+
+            University of Engineering and Technology Mardan
+
+        </p>
+
+    </div>
+
+</section>
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="container text-center">
+
+        <p class="mb-0">
+
+            © 2026 UET Mardan Student Activities Portal
+
+        </p>
+
+    </div>
+
+</footer>
+
+<!-- ================= SOURCE CODE SECTION ================= -->
+
+<section class="code-section">
+
+    <div class="container">
+
+        <h2 class="text-center text-white mb-4">
+
+            Complete Source Code
+
+        </h2>
+
+        <pre>
+
+&lt;!-- The complete HTML source code of this webpage is displayed here. --&gt;
+
+&lt;!DOCTYPE html&gt;
+
+&lt;html lang="en"&gt;
+
+&lt;head&gt;
+
+    &lt;meta charset="UTF-8"&gt;
+
+    &lt;meta name="viewport"
+
+          content="width=device-width, initial-scale=1.0"&gt;
+
+    &lt;title&gt;UET Mardan Student Activities Portal&lt;/title&gt;
+
+    &lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+
+          rel="stylesheet"&gt;
+
+    &lt;style&gt;
+
+        body {
+
+            font-family: Arial, sans-serif;
+
+            background-color: #f5f7fa;
+
+        }
+
+        .navbar {
+
+            background-color: #073b4c;
+
+        }
+
+        .hero {
+
+            background: linear-gradient(135deg, #073b4c, #118ab2);
+
+            color: white;
+
+            padding: 100px 20px;
+
+        }
+
+        .event-card {
+
+            border: none;
+
+            border-radius: 15px;
+
+            overflow: hidden;
+
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+
+        }
+
+        .event-card img {
+
+            height: 200px;
+
+            object-fit: cover;
+
+        }
+
+    &lt;/style&gt;
+
+&lt;/head&gt;
+
+&lt;body&gt;
+
+    &lt;!-- Navbar --&gt;
+
+    &lt;nav class="navbar navbar-expand-lg"&gt;
+
+        &lt;div class="container"&gt;
+
+            &lt;a class="navbar-brand text-white" href="#"&gt;
+
+                UET Mardan Portal
+
+            &lt;/a&gt;
+
+            &lt;div class="collapse navbar-collapse"&gt;
+
+                &lt;ul class="navbar-nav ms-auto"&gt;
+
+                    &lt;li class="nav-item"&gt;
+
+                        &lt;a class="nav-link" href="#home"&gt;
+
+                            Home
+
+                        &lt;/a&gt;
+
+                    &lt;/li&gt;
+
+                    &lt;li class="nav-item"&gt;
+
+                        &lt;a class="nav-link" href="#about"&gt;
+
+                            About
+
+                        &lt;/a&gt;
+
+                    &lt;/li&gt;
+
+                    &lt;li class="nav-item"&gt;
+
+                        &lt;a class="nav-link" href="#events"&gt;
+
+                            Events
+
+                        &lt;/a&gt;
+
+                    &lt;/li&gt;
+
+                    &lt;li class="nav-item"&gt;
+
+                        &lt;a class="nav-link" href="#schedule"&gt;
+
+                            Schedule
+
+                        &lt;/a&gt;
+
+                    &lt;/li&gt;
+
+                    &lt;li class="nav-item"&gt;
+
+                        &lt;a class="nav-link" href="#registration"&gt;
+
+                            Registration
+
+                        &lt;/a&gt;
+
+                    &lt;/li&gt;
+
+                    &lt;li class="nav-item"&gt;
+
+                        &lt;a class="nav-link" href="#contact"&gt;
+
+                            Contact
+
+                        &lt;/a&gt;
+
+                    &lt;/li&gt;
+
+                &lt;/ul&gt;
+
+            &lt;/div&gt;
+
+        &lt;/div&gt;
+
+    &lt;/nav&gt;
+
+    &lt;!-- Hero Section --&gt;
+
+    &lt;section id="home" class="hero"&gt;
+
+        &lt;div class="container"&gt;
+
+            &lt;div class="row align-items-center"&gt;
+
+                &lt;div class="col-lg-6"&gt;
+
+                    &lt;h1&gt;
+
+                        UET Mardan Student Activities Portal
+
+                    &lt;/h1&gt;
+
+                    &lt;p&gt;
+
+                        Discover university events, activities,
+
+                        competitions and student programs.
+
+                    &lt;/p&gt;
+
+                &lt;/div&gt;
+
+                &lt;div class="col-lg-6"&gt;
+
+                    &lt;img src="https://images.unsplash.com/photo-1562774053-701939374585"
+
+                         class="img-fluid rounded"
+
+                         alt="University"&gt;
+
+                &lt;/div&gt;
+
+            &lt;/div&gt;
+
+        &lt;/div&gt;
+
+    &lt;/section&gt;
+
+    &lt;!-- About Section --&gt;
+
+    &lt;section id="about" class="py-5"&gt;
+
+        &lt;div class="container"&gt;
+
+            &lt;h2&gt;About Student Activities&lt;/h2&gt;
+
+            &lt;p&gt;
+
+                The portal provides students with information
+
+                about university events and activities.
+
+            &lt;/p&gt;
+
+        &lt;/div&gt;
+
+    &lt;/section&gt;
+
+    &lt;!-- Events Section --&gt;
+
+    &lt;section id="events" class="py-5"&gt;
+
+        &lt;div class="container"&gt;
+
+            &lt;h2&gt;Upcoming Events&lt;/h2&gt;
+
+            &lt;div class="row g-4"&gt;
+
+                &lt;div class="col-md-6 col-lg-3"&gt;
+
+                    &lt;div class="card"&gt;
+
+                        &lt;img src="event-image.jpg"
+
+                             class="card-img-top"&gt;
+
+                        &lt;div class="card-body"&gt;
+
+                            &lt;h5&gt;
+
+                                Technology Seminar
+
+                            &lt;/h5&gt;
+
+                            &lt;p&gt;
+
+                                Learn about modern technologies.
+
+                            &lt;/p&gt;
+
+                        &lt;/div&gt;
+
+                    &lt;/div&gt;
+
+                &lt;/div&gt;
+
+                &lt;div class="col-md-6 col-lg-3"&gt;
+
+                    &lt;div class="card"&gt;
+
+                        &lt;div class="card-body"&gt;
+
+                            &lt;h5&gt;
+
+                                Student Workshop
+
+                            &lt;/h5&gt;
+
+                            &lt;p&gt;
+
+                                Improve your professional skills.
+
+                            &lt;/p&gt;
+
+                        &lt;/div&gt;
+
+                    &lt;/div&gt;
+
+                &lt;/div&gt;
+
+                &lt;div class="col-md-6 col-lg-3"&gt;
+
+                    &lt;div class="card"&gt;
+
+                        &lt;div class="card-body"&gt;
+
+                            &lt;h5&gt;
+
+                                Programming Competition
+
+                            &lt;/h5&gt;
+
+                            &lt;p&gt;
+
+                                Test your programming skills.
+
+                            &lt;/p&gt;
+
+                        &lt;/div&gt;
+
+                    &lt;/div&gt;
+
+                &lt;/div&gt;
+
+                &lt;div class="col-md-6 col-lg-3"&gt;
+
+                    &lt;div class="card"&gt;
+
+                        &lt;div class="card-body"&gt;
+
+                            &lt;h5&gt;
+
+                                Cultural Festival
+
+                            &lt;/h5&gt;
+
+                            &lt;p&gt;
+
+                                Enjoy cultural performances.
+
+                            &lt;/p&gt;
+
+                        &lt;/div&gt;
+
+                    &lt;/div&gt;
+
+                &lt;/div&gt;
+
+            &lt;/div&gt;
+
+        &lt;/div&gt;
+
+    &lt;/section&gt;
+
+    &lt;!-- Schedule --&gt;
+
+    &lt;section id="schedule" class="py-5"&gt;
+
+        &lt;div class="container"&gt;
+
+            &lt;h2&gt;Event Schedule&lt;/h2&gt;
+
+            &lt;div class="table-responsive"&gt;
+
+                &lt;table class="table table-bordered table-striped"&gt;
+
+                    &lt;thead class="table-dark"&gt;
+
+                        &lt;tr&gt;
+
+                            &lt;th&gt;Event Name&lt;/th&gt;
+
+                            &lt;th&gt;Date&lt;/th&gt;
+
+                            &lt;th&gt;Time&lt;/th&gt;
+
+                            &lt;th&gt;Venue&lt;/th&gt;
+
+                        &lt;/tr&gt;
+
+                    &lt;/thead&gt;
+
+                    &lt;tbody&gt;
+
+                        &lt;tr&gt;
+
+                            &lt;td&gt;Technology Seminar&lt;/td&gt;
+
+                            &lt;td&gt;15 October 2026&lt;/td&gt;
+
+                            &lt;td&gt;10:00 AM&lt;/td&gt;
+
+                            &lt;td&gt;Seminar Hall&lt;/td&gt;
+
+                        &lt;/tr&gt;
+
+                        &lt;tr&gt;
+
+                            &lt;td&gt;Student Workshop&lt;/td&gt;
+
+                            &lt;td&gt;18 October 2026&lt;/td&gt;
+
+                            &lt;td&gt;11:00 AM&lt;/td&gt;
+
+                            &lt;td&gt;Computer Lab&lt;/td&gt;
+
+                        &lt;/tr&gt;
+
+                        &lt;tr&gt;
+
+                            &lt;td&gt;Programming Competition&lt;/td&gt;
+
+                            &lt;td&gt;22 October 2026&lt;/td&gt;
+
+                            &lt;td&gt;09:00 AM&lt;/td&gt;
+
+                            &lt;td&gt;CS Lab&lt;/td&gt;
+
+                        &lt;/tr&gt;
+
+                        &lt;tr&gt;
+
+                            &lt;td&gt;Cultural Festival&lt;/td&gt;
+
+                            &lt;td&gt;25 October 2026&lt;/td&gt;
+
+                            &lt;td&gt;02:00 PM&lt;/td&gt;
+
+                            &lt;td&gt;Main Ground&lt;/td&gt;
+
+                        &lt;/tr&gt;
+
+                    &lt;/tbody&gt;
+
+                &lt;/table&gt;
+
+            &lt;/div&gt;
+
+        &lt;/div&gt;
+
+    &lt;/section&gt;
+
+    &lt;!-- Registration Form --&gt;
+
+    &lt;section id="registration" class="py-5"&gt;
+
+        &lt;div class="container"&gt;
+
+            &lt;h2&gt;Student Event Registration&lt;/h2&gt;
+
+            &lt;form&gt;
+
+                &lt;label&gt;Full Name&lt;/label&gt;
+
+                &lt;input type="text"
+
+                       class="form-control"
+
+                       required&gt;
+
+                &lt;label class="mt-3"&gt;Email&lt;/label&gt;
+
+                &lt;input type="email"
+
+                       class="form-control"
+
+                       required&gt;
+
+                &lt;label class="mt-3"&gt;Department&lt;/label&gt;
+
+                &lt;select class="form-select"&gt;
+
+                    &lt;option&gt;
+
+                        Computer Science
+
+                    &lt;/option&gt;
+
+                    &lt;option&gt;
+
+                        Electrical Engineering
+
+                    &lt;/option&gt;
+
+                    &lt;option&gt;
+
+                        Civil Engineering
+
+                    &lt;/option&gt;
+
+                &lt;/select&gt;
+
+                &lt;label class="mt-3"&gt;
+
+                    Select Event
+
+                &lt;/label&gt;
+
+                &lt;select class="form-select"&gt;
+
+                    &lt;option&gt;
+
+                        Technology Seminar
+
+                    &lt;/option&gt;
+
+                    &lt;option&gt;
+
+                        Student Workshop
+
+                    &lt;/option&gt;
+
+                    &lt;option&gt;
+
+                        Programming Competition
+
+                    &lt;/option&gt;
+
+                    &lt;option&gt;
+
+                        Cultural Festival
+
+                    &lt;/option&gt;
+
+                &lt;/select&gt;
+
+                &lt;label class="mt-3"&gt;
+
+                    Gender
+
+                &lt;/label&gt;
+
+                &lt;div class="form-check"&gt;
+
+                    &lt;input type="radio"
+
+                           name="gender"
+
+                           class="form-check-input"&gt;
+
+                    &lt;label class="form-check-label"&gt;
+
+                        Male
+
+                    &lt;/label&gt;
+
+                &lt;/div&gt;
+
+                &lt;div class="form-check"&gt;
+
+                    &lt;input type="radio"
+
+                           name="gender"
+
+                           class="form-check-input"&gt;
+
+                    &lt;label class="form-check-label"&gt;
+
+                        Female
+
+                    &lt;/label&gt;
+
+                &lt;/div&gt;
+
+                &lt;label class="mt-3"&gt;
+
+                    Message
+
+                &lt;/label&gt;
+
+                &lt;textarea class="form-control"
+
+                          rows="4"&gt;
+
+                &lt;/textarea&gt;
+
+                &lt;button class="btn btn-primary mt-3"
+
+                        type="submit"&gt;
+
+                    Submit Registration
+
+                &lt;/button&gt;
+
+            &lt;/form&gt;
+
+        &lt;/div&gt;
+
+    &lt;/section&gt;
+
+    &lt;!-- Contact --&gt;
+
+    &lt;section id="contact" class="py-5 text-center"&gt;
+
+        &lt;h2&gt;Contact Us&lt;/h2&gt;
+
+        &lt;p&gt;
+
+            UET Mardan Student Activities Portal
+
+        &lt;/p&gt;
+
+    &lt;/section&gt;
+
+    &lt;footer class="text-center bg-dark text-white p-4"&gt;
+
+        © 2026 UET Mardan Student Activities Portal
+
+    &lt;/footer&gt;
+
+    &lt;script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"&gt;
+
+    &lt;/script&gt;
+
+&lt;/body&gt;
+
+&lt;/html&gt;
+
+        </pre>
+
+    </div>
+
+</section>
+
+<!-- Bootstrap JavaScript -->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+
+</script>
+
+</body>
+
+</html>
